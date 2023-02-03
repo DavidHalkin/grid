@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<link href="css/all.css" rel="stylesheet">
+</head>
+
+<body>
+	<h2>grid-auto-flow¶ :</h2>
+	как заполняется грид колонка или строка или dence
+	<h2><span>grid-template-columns:</span> работа с колонками</h2>
+	<div class="grid">
+		<div class="box g1">1 lorem</div>
+		<div class="box g2 blue">2</div>
+		<div class="box g3 green">3</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<h2><span>grid-template-rows:</span>,<span>grid-column</span>,<span>grid-row</span> работа со строками и
+		растягиванием <span>grid-column - X</span>, <span>grid-row - Y</span></h2>
+	<div class="grid_1">
+		<div class="box g1">1</div>
+		<div class="box g2 blue">2</div>
+		<div class="box g3 green">3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima minus, provident nobis
+			earum quas facere corrupti labore ipsam maxime harum modi facilis illo ab id quod nam doloribus, nesciunt
+			dolores!</div>
+		<!-- <div class="box g3 green">4</div>
+		<div class="box g3 green">5</div>
+		<div class="box g3 green">6</div>
+		<div class="box g3 green">7</div>
+		<div class="box g3 green">8</div>
+		<div class="box g3 green">9</div>
+		<div class="box g3 green">10</div>
+		<div class="box g3 green">11</div>
+		<div class="box g3 green">12</div>
+		<div class="box g3 green">12</div>
+		<div class="box g3 green">12</div>
+		<div class="box g3 green">12</div>
+		<div class="box g3 green">12</div> -->
+	</div>
+	<h2>Наименования (<span>grid-template-columns: repeat(12, <em>[col]</em> 1fr);
+			grid-template-rows: repeat(8, <em>[row]</em> 1fr);</span> + <span>span</span></h2>
+	<div class="grid_2">
+		<div class="box g1">1</div>
+		<div class="box g2 blue">2</div>
+		<div class="box g3 red">3</div>
+		<div class="box g4 green">4</div>
+		<div class="box g5 green">5</div>
+		<div class="box g6 green">6</div>
+		<div class="box g7 green">7</div>
+		<div class="box g8 green">8</div>
+		<div class="box g9 green">9</div>
+		<div class="box g10 green">10</div>
+		<div class="box g11 green">11</div>
+		<div class="box g12 green">12</div>
+	</div>
+	<h2>макет</h2>
+	<div class="grid_3">
+		<div class="box g1">1</div>
+		<div class="box g2 blue">2</div>
+		<div class="box g3 red">3</div>
+		<div class="box g4 green">4</div>
+		<div class="box g5 green" style="background: bisque !important;">5</div>
+		<div class="box g6 green" style="background: brown !important;">6</div>
+		<div class="box g7 green" style="background: orangered !important;">7</div>
+		<div class="box g8 green" style="background: blueviolet !important;">8</div>
+		<div class="box g9 green" style="background: plum !important;">9</div>
+		<div class="box g10 green" style="background: purple !important;">10</div>
+		<div class="box g11 green" style="background: yellowgreen !important;">11</div>
+	</div>
+	<h2>Выравнивания . на родителя: <span>align-items; justify-items;</span>. На детей: <span>align-self;
+			justify-self</span></h2>
+	<div class="grid_4">
+		<div class="box g1">1</div>
+	</div>
+	<h2>Выравнивание много елемемнтов <span>justify-content align-content</span></h2>
+	<div class="grid_5">
+		<div class="box g1">1</div>
+		<div class="box g2 blue" style="width: 200px;">2</div>
+		<div class="box g3 red">3</div>
+	</div>
+	<h2>Используя значение auto-fill, вы всегда получите хотя бы один столбец, даже если он по какой-то причине не
+		помещается в контейнер-сетку.<span>auto-fill</span></h2>
+	<div class="grid_6">
+		<div class="box g1">1</div>
+		<div class="box g2 blue">2</div>
+		<div class="box g3 red">3</div>
+		<div class="box g4 green">4</div>
+		<div class="box g5 green" style="background: bisque !important;">5</div>
+		<div class="box g6 green" style="background: brown !important;">6</div>
+		<div class="box g7 green" style="background: orangered !important;">7</div>
+		<div class="box g8 green" style="background: blueviolet !important;">8</div>
+		<div class="box g9 green" style="background: plum !important;">9</div>
+		<div class="box g10 green" style="background: purple !important;">10</div>
+	</div>
+	<h2>Если вы используете <span>auto-fit</span>, то дорожки, которые не содержат элементы сетки, будут сброшены.</h2>
+	<div class="grid_7">
+		<div class="box g1">1</div>
+		<div class="box g2 blue">2</div>
+		<div class="box g3 red">3</div>
+		<div class="box g4 green">4</div>
+		<div class="box g5 green" style="background: bisque !important;">5</div>
+		<div class="box g6 green" style="background: brown !important;">6</div>
+		<div class="box g7 green" style="background: orangered !important;">7</div>
+		<div class="box g8 green" style="background: blueviolet !important;">8</div>
+		<div class="box g9 green" style="background: plum !important;">9</div>
+		<div class="box g10 green" style="background: purple !important;">10</div>
+	</div>
+	<h2>Свойство <span>grid-template-areas</span> определяет именованные области сетки, которые не связаны с каким-либо
+		конкретным элементом сетки, но на которые можно ссылаться из свойств размещения сетки. Синтаксис свойства
+		обеспечивает визуализацию структуры сетки, облегчая понимание общего макета контейнера-сетки. Свойство не
+		наследуется.</h2>
+	<div class="grid_8">
+		<div style="grid-area: header" class="grid__item">1</div>
+		<div style="grid-area: sidebar" class="grid__item">2</div>
+		<div style="grid-area: content" class="grid__item">3</div>
+		<div style="grid-area: block-1" class="grid__item">4</div>
+		<div style="grid-area: block-2" class="grid__item">5</div>
+		<div style="grid-area: footer" class="grid__item">6</div>
+	</div>
+	<p>По умолчанию эти автоматически добавляемые дорожки имеют минимальный необходимый размер. Свойства
+		<span>grid-auto-rows</span> и <span>grid-auto-columns</span> позволяют контролировать размер неявных дорожек
+		сетки. Если дано несколько размеров дорожек, шаблон повторяется по мере необходимости, чтобы найти размер неявных
+		дорожек. Первая неявная дорожка сетки после явной сетки получает первый заданный размер и так далее. Свойства не
+		наследуются.
+	</p>
+	<p>Свойство <span>grid-auto-flow</span> управляет тем, как работает алгоритм автоматического размещения, точно
+		указывая, как элементы попадают в сетку. Если у вас есть элементы, которые вы явно не позиционируете в сетке,
+		запускается алгоритм авто-размещения, чтобы их автоматически разместить. Это свойство контролирует то, как
+		алгоритм авто-размещения работает.</p>
+	<div style="overflow: auto;">
+		<div class="grid_9">
+			<div class="grid__item">1</div>
+			<div class="grid__item">2</div>
+			<div class="grid__item">3</div>
+			<div class="grid__item">4</div>
+			<div class="grid__item">5</div>
+			<div class="grid__item">6</div>
+			<div class="grid__item">6</div>
+		</div>
+	</div>
+</body>
+
+</html>

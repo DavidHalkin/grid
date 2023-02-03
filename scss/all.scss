@@ -1,0 +1,304 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 30px;
+	background: #ccc;
+}
+
+h2 {
+	span {
+		color: rgb(28, 178, 189);
+	}
+
+	em {
+		font-style: normal;
+		color: red;
+	}
+}
+
+.blue {
+	background: blue !important;
+	border-color: darken(blue, 10%) !important;
+}
+
+.red {
+	background: red !important;
+	border-color: darken(red, 10%) !important;
+}
+
+.green {
+	background: green !important;
+	border-color: darken(green, 10%) !important;
+}
+
+p {
+	font-size: 20px;
+
+	span {
+		color: red;
+	}
+}
+
+.box {
+	background: orange;
+	border: 5px solid rgb(169, 194, 105);
+	border-color: darken(orange, 10%);
+	font-size: 20px;
+	color: #fff;
+
+}
+
+.grid {
+	border: 1px solid #000;
+	display: grid;
+	grid-template-columns: 100px 1fr 200px;
+	//3 колонки по 100px остаток и 200px
+
+	// grid-template-columns: 1fr 2fr 3fr 100px; 
+	// (сделали резерв появился отстпу в 100пх из-за того что елемента тока 3 а параметра 4)
+
+	// grid-template-columns: min-content 700px max-content;	
+	// (1я колонка подстороилась под самое длиенное слово. 2-я 200пх. 3-я под сам контент)
+
+	// grid-template-columns: 200px 100px minmax(100px, 300px);
+	// 1-я 200пх вторая 100пх а 3я - минималка 100 и максималка 300
+
+
+	// grid-template-columns: repeat(3, 1fr);
+	//разбили на 3 колонки. каждая поровну.  repeat(3, 1fr) and repeat(3, auto) -одно и тоже
+
+	grid-column-gap: 10px;
+	//расстояние между КОЛОНКАМИ
+}
+
+.grid_1 {
+	display: grid;
+	//создаем шаблон поведения строк + колонок (повтор по равные 3 строки все будут равны по высоте)
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+
+
+	.g1 {
+		// grid-column-start: 3;
+		// когда елемент начинает в сетке по колонкам(с третей линии)
+
+		// grid-column-end: 4;
+		// когда елемент заканчивается в сетке по колонкам(на 4 линии)
+
+		// grid-row-start: 3;
+		//с какой СТРОКИ(вертикаль) начинается элемент (3)
+
+		// grid-row-end: 4;
+		//с какой СТРОКИ(вертикаль) ЗАКАНЧИВАЕТСЯ элемент (4)
+
+		// можно коротко
+		// grid-column: 3 / 4; //старт/финиш
+		// grid-row: 1 / 4;
+
+		//ещё более коротко
+		grid-area: 1 / 3 / 4 / 4; //(g-row-start/g-column-start/g-row-end/g-column-end)
+	}
+}
+
+.grid_2 {
+	display: grid;
+	grid-template-columns: repeat(12, [col] 1fr);
+	grid-template-rows: repeat(8, [row] 1fr);
+	grid-column-gap: 15px;
+
+
+	.g3 {
+		// grid-column: col 1 / col 4; 
+		//старт и финиш через имена ( тоже самое grid-column: 1/4;)
+
+		// grid-column: col 1 / span 8; //старт от первой позиции и займи 8 ячеек
+		// grid-column: span 8; //старт с текущей позции и на 8 ячеек
+		// grid-column: span 3 / 13; // с конца сетки (100% - 13й елмент) растянись на 3
+
+		// grid-column: col 7; //просто пенеёс в 7й стобик
+		// grid-row: row 3; //просто перенём на 3-ю строку
+		grid-column: col 1 / span 4;
+		grid-row: row 3 / span 4;
+	}
+}
+
+.grid_3 {
+	display: grid;
+	background: pink;
+	grid-template-columns: repeat(6, [col] 1fr);
+	grid-template-rows: repeat(3, [row] 1fr);
+	grid-gap: 10px;
+
+	.box {
+		min-height: 80px;
+	}
+
+	.g1 {
+		// grid-column: col 1 / col 3; 
+		// или
+		grid-column: span 2;
+	}
+
+	.g2 {
+		grid-column: col 3 / col 5;
+		grid-row: row 1 / row 3;
+		// или
+		// grid-column: span 2;
+		// grid-row: span 2;
+	}
+
+	.g3 {
+		grid-row: span 2;
+	}
+
+	.g9,
+	.g10 {
+		grid-column: span 2;
+	}
+}
+
+.grid_4 {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 200px;
+
+
+	// align-items: stretch;
+	// align-items: center;
+	// align-items: start;
+	// align-items: end;
+
+	// justify-items: center;
+	// justify-items: end;
+	// justify-items: start;
+	justify-items: stretch;
+
+	.g1 {
+		// align-self: stretch; //растягивание по Y
+		// align-self: start; //up
+		// align-self: end; //bottom
+		// align-self: center; //center
+
+		// justify-self: stretch; // растягивает по X
+		// justify-self: start; // 0
+		// justify-self: end; // right
+		// justify-self: center; // center
+	}
+}
+
+.grid_5 {
+	display: grid;
+	height: 300px;
+	gap: 15px;
+	background: green;
+	// justify-content: start;
+	// justify-content: center;
+	// justify-content: end;
+	// justify-content: stretch;
+	// justify-content: space-around;
+	// justify-content: space-between;
+	// justify-content: space-evenly;
+
+	// align-content: start;
+	// align-content: center;
+	// align-content: end;
+	// align-content: stretch;
+	// align-content: space-around;
+	// align-content: space-between;
+	align-content: space-evenly;
+
+	.box {
+		width: 30px;
+		height: 30px;
+	}
+}
+
+.grid_6 {
+	display: grid;
+	gap: 5px;
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+	// or
+	grid-template: auto / repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.grid_7 {
+	display: grid;
+	gap: 5px;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	// or
+	grid-template: auto / repeat(auto-fit, minmax(150px, 1fr));
+}
+
+
+.grid_8 {
+	background-color: #eee;
+	display: grid;
+	grid-template-columns: 150px 1fr;
+	grid-template-areas: 'header header' 'sidebar content' 'block-1 block-2' 'footer footer';
+
+
+	.grid__item {
+		background-color: #5e5373;
+		border: 1px dashed #ece89d;
+		padding: 10px;
+		color: #fff;
+		font-size: 20px;
+		font-weight: 700;
+
+	}
+
+	.grid__item:nth-child(1) {
+		grid-area: header;
+
+	}
+
+	.grid__item:nth-child(2) {
+		grid-area: sidebar;
+
+	}
+
+	.grid__item:nth-child(3) {
+		grid-area: content;
+
+	}
+
+	.grid__item:nth-child(4) {
+		grid-area: block-1;
+
+	}
+
+	.grid__item:nth-child(5) {
+		grid-area: block-2;
+
+	}
+
+	.grid__item:nth-child(6) {
+		grid-area: footer;
+
+	}
+
+}
+
+
+.grid_9 {
+	background-color: #eee;
+	display: grid;
+	grid-template: 1fr/ repeat(3, 200px);
+	grid-auto-columns: 50px; // не явные колонки будут уже по  50 px
+	//minmax() etc
+	grid-auto-flow: column; // column; dense row
+
+}
+
+.grid__item {
+	background-color: #5e5373;
+	border: 1px dashed #ece89d;
+	padding: 10px;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
+
+}
